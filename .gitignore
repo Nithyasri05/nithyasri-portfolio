@@ -15,6 +15,7 @@ dist-ssr
 # Private assets not meant for GitHub
 public/avatar.jpg
 public/resume.pdf
+tmp_avatar.jpg
 
 # Local environment variables
 .env

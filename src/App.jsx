@@ -67,6 +67,8 @@ const PROJECT_CORROSION_URL = import.meta.env.VITE_PROJECT_CORROSION_DETECTION_U
 const PROJECT_NATURECERT_URL = import.meta.env.VITE_PROJECT_NATURECERT_URL || "#";
 const PROJECT_LAND_PROMOTERS_URL = import.meta.env.VITE_PROJECT_LAND_PROMOTERS_URL || "#";
 const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL_ADDRESS || "nithyasrir05@gmail.com";
+const AVATAR_URL = import.meta.env.VITE_AVATAR_URL || "/avatar.jpg";
+const RESUME_URL = import.meta.env.VITE_RESUME_URL || "/resume.pdf";
 
 const PROJECTS = [
   {
@@ -967,7 +969,7 @@ export default function ModernPortfolio() {
               <button className="btn-secondary" onClick={() => scrollToSection("projects")}>
                 View Projects
               </button>
-              <a className="btn-secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
+              <a className="btn-secondary" href={RESUME_URL} target="_blank" rel="noreferrer">
                 View Resume
               </a>
             </div>
@@ -977,7 +979,7 @@ export default function ModernPortfolio() {
           <Reveal delay={300}>
             <div className="avatar-pod">
               <div className="avatar">
-                <img src="/avatar.jpg" alt="Nithyasri R Profile Asset" className="avatar-img" />
+                <img src={AVATAR_URL} alt="Nithyasri R Profile Asset" className="avatar-img" />
               </div>
             </div>
           </Reveal>
