@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <!-- Portfolio signature emerald gradient -->
+    <linearGradient id="tabGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#065f46" />
+    </linearGradient>
+    <!-- Premium glass-like inner mint glow -->
+    <linearGradient id="innerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ccfbf1" />
+      <stop offset="100%" stop-color="#a7f3d0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Outer Frame Ring -->
+  <circle cx="64" cy="64" r="54" fill="url(#innerGlow)" stroke="url(#tabGradient)" stroke-width="12" />
+
+  <!-- Code Brackets & Slash (Thickened for extreme readability at micro scales) -->
+  <path d="M42,46 L24,64 L42,82" fill="none" stroke="url(#tabGradient)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M86,46 L104,64 L86,82" fill="none" stroke="url(#tabGradient)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M72,36 L56,92" fill="none" stroke="url(#tabGradient)" stroke-width="10" stroke-linecap="round" />
+</svg>
