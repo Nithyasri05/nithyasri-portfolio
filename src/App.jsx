@@ -1059,7 +1059,7 @@ export default function ModernPortfolio() {
           nav .nav-links { display: none; }
           .hamburger { display: inline-flex; }
           .mobile-swipe-hint { display: none; }
-          .ctrl-btn { display: inline-flex; }
+          .ctrl-btn { display: none; }
           .ctrl-btn.l-pos { left: 8px; }
           .ctrl-btn.r-pos { right: 8px; }
           .avatar { width: 220px; height: 220px; }
