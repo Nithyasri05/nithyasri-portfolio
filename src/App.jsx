@@ -285,6 +285,47 @@ export default function ModernPortfolio() {
     container.scrollBy({ left: dir === "left" ? -scrollVal : scrollVal, behavior: "smooth" });
   };
 
+  const scrollToProject = (index) => {
+    if (!projectRef.current) return;
+    const panels = projectRef.current.querySelectorAll('.project-glass-panel');
+    if (panels[index]) {
+      panels[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  };
+
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState(0);
+
+  useEffect(() => {
+    if (!projectRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const panels = projectRef.current.querySelectorAll('.project-glass-panel');
+            const index = Array.from(panels).indexOf(entry.target);
+            if (index !== -1) {
+              setActiveProject(index);
+            }
+          }
+        });
+      },
+      {
+        root: projectRef.current,
+        threshold: 0.55,
+      }
+    );
+
+    const panels = projectRef.current.querySelectorAll('.project-glass-panel');
+    panels.forEach((panel) => observer.observe(panel));
+
+    return () => {
+      panels.forEach((panel) => observer.unobserve(panel));
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="portfolio-core">
       <style>{`
@@ -371,6 +412,41 @@ export default function ModernPortfolio() {
           display: flex;
           gap: 10px;
         }
+
+        .hamburger {
+          display: none;
+          width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hamburger .bar {
+          width: 20px;
+          height: 2px;
+          background: #0f172a;
+          display: block;
+          border-radius: 2px;
+          position: relative;
+        }
+
+        .hamburger .bar::before,
+        .hamburger .bar::after {
+          content: "";
+          width: 20px;
+          height: 2px;
+          background: #0f172a;
+          position: absolute;
+          left: 0;
+          border-radius: 2px;
+        }
+
+        .hamburger .bar::before { top: -6px; }
+        .hamburger .bar::after { top: 6px; }
 
         .nav-links button {
           border: none;
@@ -708,6 +784,7 @@ export default function ModernPortfolio() {
         }
         .scroll-window::-webkit-scrollbar { display: none; }
         .project-track { display: flex; gap: 24px; align-items: stretch; }
+        .project-glass-panel { scroll-snap-align: start; }
         
         /* FIXED PROJECT PANEL HEIGHT CONFIG */
         .project-glass-panel {
@@ -719,6 +796,12 @@ export default function ModernPortfolio() {
           color: #0f172a;
           min-height: 340px; /* Ensured no card crushes the content layout */
         }
+
+        .scroll-window { -webkit-overflow-scrolling: touch; }
+
+        .carousel-dots { display: none; gap: 8px; justify-content: center; margin-top: 12px; }
+        .carousel-dots .dot { width: 10px; height: 10px; border-radius: 999px; background: rgba(15,23,42,0.12); border: none; cursor: pointer; transition: transform 0.18s ease, background 0.18s ease; }
+        .carousel-dots .dot.active { background: #065f46; transform: scale(1.25); }
         
         .glow-overlay {
           position: absolute;
@@ -782,6 +865,73 @@ export default function ModernPortfolio() {
         .ctrl-btn:hover { background: #10b981; color: #ffffff; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
         .ctrl-btn.l-pos { left: -14px; }
         .ctrl-btn.r-pos { right: -14px; }
+
+        /* Mobile swipe hint button */
+        .mobile-swipe-hint {
+          display: none;
+        }
+
+        /* Mobile nav overlay (hidden by default) */
+        .mobile-nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 100vw;
+          z-index: 2000;
+          pointer-events: none;
+          transition: opacity 0.25s ease;
+          opacity: 0;
+        }
+
+        .mobile-nav.open { opacity: 1; pointer-events: auto; }
+
+        .mobile-nav-panel {
+          width: 260px;
+          max-width: 80%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(255,255,255,0.98), #ffffff);
+          box-shadow: 0 20px 50px rgba(15,23,42,0.12);
+          backdrop-filter: blur(8px);
+          padding: 28px 18px;
+        }
+
+        .mobile-nav-link {
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding: 14px 10px;
+          background: transparent;
+          border: none;
+          color: #065f46;
+          font-size: 16px;
+          font-weight: 700;
+          cursor: pointer;
+          border-radius: 14px;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link:focus {
+          background: rgba(6,95,70,0.12);
+          color: #065f46;
+          outline: none;
+        }
+
+        .mobile-nav-link.active {
+          background: rgba(6,95,70,0.16);
+          color: #065f46;
+        }
+
+        .mobile-nav-link.active:hover {
+          background: rgba(6,95,70,0.2);
+        }
+
+        .mobile-nav-backdrop {
+          position: absolute;
+          inset: 0;
+          background: rgba(2,6,23,0.32);
+        }
 
         /* SKILLS ARCHITECTURE INTERFACES */
         .skills-hub {
@@ -907,14 +1057,21 @@ export default function ModernPortfolio() {
           .hero { flex-direction: column-reverse; text-align: center; padding-top: 140px; padding-bottom: 60px; gap: 40px; min-height: auto; }
           .hero-actions, .hero-inline-socials { justify-content: center; width: 100%; }
           nav .nav-links { display: none; }
+          .hamburger { display: inline-flex; }
+          .mobile-swipe-hint { display: none; }
+          .ctrl-btn { display: inline-flex; }
+          .ctrl-btn.l-pos { left: 8px; }
+          .ctrl-btn.r-pos { right: 8px; }
           .avatar { width: 220px; height: 220px; }
           section { padding: 80px 5%; }
           .skill-row-matrix { gap: 16px; padding: 24px; }
           .edu-item { padding: 28px; gap: 24px; }
           .timeline-content { padding: 28px; }
-          .ctrl-btn { display: none; }
+          .carousel-dots { display: flex; }
+          /* ctrl-btn remains visible on mobile */
           .contact-card-box { padding: 40px 20px; }
-          .project-glass-panel { min-width: 290px; padding: 28px; }
+          .project-glass-panel { min-width: 280px; max-width: 320px; padding: 20px; }
+          .project-track { gap: 16px; }
         }
       `}</style>
 
@@ -923,6 +1080,13 @@ export default function ModernPortfolio() {
       <KineticParticleBackground />
 
       <nav className={scrolled ? "nav-scrolled" : ""}>
+        <button
+          className="hamburger"
+          aria-label="Open menu"
+          onClick={() => setMobileNavOpen(true)}
+        >
+          <span className="bar" />
+        </button>
         <div className="logo">
           NR<span>.</span>
         </div>
@@ -938,6 +1102,25 @@ export default function ModernPortfolio() {
           ))}
         </div>
       </nav>
+
+      <div className={"mobile-nav" + (mobileNavOpen ? " open" : "")} onClick={() => setMobileNavOpen(false)}>
+        <div className="mobile-nav-backdrop" />
+        <div className="mobile-nav-panel" onClick={(e) => e.stopPropagation()}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+            <div style={{ fontWeight: 800, fontSize: 18 }}>Menu</div>
+            <button onClick={() => setMobileNavOpen(false)} style={{ border: 'none', background: 'transparent', cursor: 'pointer', fontSize: 18 }}>✕</button>
+          </div>
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item}
+              className={`mobile-nav-link ${active === item ? 'active' : ''}`}
+              onClick={() => { scrollToSection(item); setMobileNavOpen(false); }}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* ABOUT / HERO SECTION */}
       <section className="hero" id="about">
@@ -1083,6 +1266,16 @@ export default function ModernPortfolio() {
           <button className="ctrl-btn r-pos" onClick={() => scrollProjects("right")} aria-label="Slide Right">
             <ChevronRight size={18} />
           </button>
+        </div>
+        <div className="carousel-dots" role="tablist" aria-label="Projects pagination">
+          {PROJECTS.map((_, idx) => (
+            <button
+              key={idx}
+              className={"dot" + (activeProject === idx ? " active" : "")}
+              onClick={() => scrollToProject(idx)}
+              aria-label={`Go to project ${idx + 1}`}
+            />
+          ))}
         </div>
       </section>
 
