@@ -70,63 +70,10 @@ I’m a Computer Science student and developer focused on building impactful dig
 
 ---
 
-## GitHub Activity
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Nithyasri05&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub stats" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nithyasri05&layout=compact&theme=tokyonight&hide_border=true" alt="Most used languages" />
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Nithyasri05&style=flat-square&color=blue" alt="Profile views" />
-</p>
-
----
-
-## Featured Work
-
-<table>
-  <tr>
-    <td width="33%">
-      <h3>Land Promoters Website</h3>
-      <p>A real-estate platform with listing management, property dashboards, admin workflows, and customer enquiry automation.</p>
-      <p><strong>Tech:</strong> React, Node.js, Express, MongoDB, JWT, Nodemailer</p>
-      <p>
-        <a href="https://github.com/Nithyasri05/land-promoters">Repo</a> •
-        <a href="https://land-promoters.vercel.app/">Live Demo</a>
-      </p>
-    </td>
-    <td width="33%">
-      <h3>Corrosion Detection</h3>
-      <p>A computer vision-driven predictive maintenance solution using YOLOv5 and OpenCV for defect detection and monitoring.</p>
-      <p><strong>Tech:</strong> Python, OpenCV, YOLOv5, Twilio, Computer Vision</p>
-      <p>
-        <a href="https://github.com/Nithyasri05/Corrosion-Detection">Repo</a> •
-        <a href="#">Live Demo</a>
-      </p>
-    </td>
-    <td width="33%">
-      <h3>HELIX Mail</h3>
-      <p>An AI-powered workspace for smarter email handling and productivity flows.</p>
-      <p><strong>Tech:</strong> Next.js, React, Gmail API, MongoDB, Gemini/OpenAI</p>
-      <p>
-        <a href="https://github.com/Nithyasri05/Helix-Mail">Repo</a> •
-        <a href="https://helix-mail.vercel.app/">Live Demo</a>
-      </p>
-    </td>
-  </tr>
-</table>
-
----
-
 ## Contact
 
 - 📧 Email: [nithyasrir05@gmail.com](mailto:nithyasrir05@gmail.com)
 - 💼 LinkedIn: [linkedin.com/in/nithyasri](https://www.linkedin.com/in/nithyasri-r-11b398315/)
-- 🧑‍💻 GitHub: [github.com/nithyasri](https://github.com/Nithyasri05)
 
 ---
 
