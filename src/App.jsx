@@ -9,7 +9,7 @@ const EDUCATION = [
     title: "M.Tech Computer Science & Engineering (Integrated 5 Years)",
     place: "Sri Ramakrishna Engineering College, Coimbatore",
     year: "2022 – 2027",
-    score: "CGPA 8.1 / 10",
+    score: "CGPA 8.12 / 10",
   },
   {
     title: "Higher Secondary Education (HSC)",
@@ -31,10 +31,9 @@ const EXPERIENCE = [
     company: "RBG.AI",
     period: "Jun 2025 – Dec 2025",
     points: [
-      "Engineered the core Multi-Level Task Management System, supporting nested subtasks, secure GridFS file attachments, commenting threads, and automated verification workflows.",
-      "Architected a secure FastAPI backend with JWT & Google OAuth2, implementing role-based dashboards and automated Axios token injection interceptors.",
-      "Built connection-pooled WebSocket managers and an APScheduler background engine for real-time chat sync, task updates, and automated attendance alerts.",
-      "Configured comprehensive automated test coverages across critical user flows using Jest and Playwright to guarantee 95%+ overall platform uptime."
+      "Contributed to a full-stack workforce management platform with role-based workflows, secure authentication, and real-time collaboration features.",
+      "Designed and integrated 50+ REST APIs with FastAPI and MongoDB, connecting responsive React interfaces for tasks, attendance, leave, and team communication.",
+      "Strengthened product reliability through JWT authentication, automated backend workflows, WebSocket features, and end-to-end coverage with Playwright and Jest."
     ],
   },
   {
@@ -42,10 +41,9 @@ const EXPERIENCE = [
     company: "Twisys Infotech",
     period: "Dec 2024",
     points: [
-      "Engineered a fully responsive real estate property presentation dashboard layout utilizing custom HTML5 and dynamic CSS3 configurations.",
-      "Integrated and deployed a conversational AI chatbot layer using Botpress to automate live customer property inquiries and user query loops.",
-      "Developed secure client-side lead capture form elements to automatically collect, parse, and synchronize data from frontend inquiry submissions.",
-      "Optimized frontend components, image asset behaviors, and interactive modules to significantly eliminate rendering lag and improve scroll response metrics."
+      "Integrated an AI-powered property assistant that automated first-response workflows for real estate enquiries.",
+      "Built responsive React.js interfaces and refined frontend performance across the platform’s core user journeys.",
+      "Connected assistant interactions with contact forms to create a more consistent lead-capture and enquiry-management flow."
     ],
   },
   {
@@ -53,9 +51,9 @@ const EXPERIENCE = [
     company: "Kitkat Software Technologies",
     period: "Jun 2024",
     points: [
-      "Developed modular web user interfaces using native HTML5 and CSS3 semantic code properties.",
-      "Designed and deployed interactive frontend navigation schemas to refine end-user engagement tracking.",
-      "Conducted systemic browser layout testing to guarantee cross-browser compatibility and accelerate high-speed asset rendering."
+      "Built responsive React.js interfaces with reusable components and consistent interaction patterns.",
+      "Implemented search and filtering experiences that made application navigation faster and more intuitive.",
+      "Improved component structure and rendering behavior to deliver a smoother experience across devices."
     ],
   },
 ];
@@ -63,41 +61,54 @@ const EXPERIENCE = [
 const GITHUB_LINK = import.meta.env.VITE_GITHUB_URL || "#";
 const LINKEDIN_LINK = import.meta.env.VITE_LINKEDIN_URL || "#";
 const PROJECT_ECONNECT_URL = import.meta.env.VITE_PROJECT_ECONNECT_URL || "#";
+const PROJECT_HELIX_MAIL_URL = import.meta.env.VITE_PROJECT_HELIX_MAIL_URL || "#";
+const PROJECT_HELIX_MAIL_DEMO_URL = import.meta.env.VITE_PROJECT_HELIX_MAIL_DEMO_URL || "#";
 const PROJECT_CORROSION_URL = import.meta.env.VITE_PROJECT_CORROSION_DETECTION_URL || "#";
 const PROJECT_NATURECERT_URL = import.meta.env.VITE_PROJECT_NATURECERT_URL || "#";
 const PROJECT_LAND_PROMOTERS_URL = import.meta.env.VITE_PROJECT_LAND_PROMOTERS_URL || "#";
-const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL_ADDRESS || "nithyasrir05@gmail.com";
+const PROJECT_LAND_PROMOTERS_DEMO_URL = import.meta.env.VITE_PROJECT_LAND_PROMOTERS_DEMO_URL || "#";
+const EMAIL_ADDRESS = import.meta.env.VITE_EMAIL_ADDRESS || "";
 const AVATAR_URL = import.meta.env.VITE_AVATAR_URL || "/avatar.jpg";
 const RESUME_URL = import.meta.env.VITE_RESUME_URL || "/resume.pdf";
 
 const PROJECTS = [
   {
     title: "E-Connect Workforce Management Platform",
-    desc: "A centralized full-stack workflow platform featuring a multi-level task management engine, secure GridFS attachments, and connection-pooled WebSockets optimized to eliminate tool fragmentation and maintain 95% uptime.",
+    desc: "A full-stack workforce management platform with role-based workflows, authentication, and real-time communication. Includes 50+ RESTful APIs and responsive interfaces for task management, attendance, leave management, and automated backend workflows.",
     tech: ["React.js", "FastAPI", "MongoDB", "WebSockets", "APScheduler"],
+    badge: "Internship Project",
     github: PROJECT_ECONNECT_URL,
     glow: "#10b981",
   },
   {
+    title: "Land Promoters Website",
+    desc: "A full-stack real estate platform for a land development business, combining a public property catalogue with a secure admin dashboard for managing listings, galleries, testimonials, property status, and customer enquiries through REST APIs, JWT authentication, MongoDB, and optional Nodemailer notifications.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Nodemailer"],
+    github: PROJECT_LAND_PROMOTERS_URL,
+    demo: PROJECT_LAND_PROMOTERS_DEMO_URL,
+    glow: "#f5b78b",
+  },
+  {
     title: "Corrosion Detection in Wind Turbine Motors",
-    desc: "An automated predictive maintenance AI system engineered to replace manual high-altitude turbine inspections. Utilizes thermal imaging data and a YOLOv5 model to achieve 90% corrosion classification accuracy with instant Twilio SMS alerting.",
+    desc: "A thermal imaging-based predictive maintenance system using YOLOv5 and OpenCV to identify and classify corrosion severity in wind turbine motors with 90% detection accuracy, real-time monitoring, and automated Twilio SMS alerts.",
     tech: ["YOLOv5", "OpenCV", "WebSockets", "Twilio API"],
     github: PROJECT_CORROSION_URL,
     glow: "#eda18f",
   },
   {
     title: "Eco-Friendly Compliance System",
-    desc: "An all-in-one sustainability web platform built to track personal carbon footprints and offer eco-tips. Features dynamic daily challenge tracking matrix dashboards driven by live WebSocket telemetry and high-speed REST APIs.",
+    desc: "A full-stack sustainability platform for carbon footprint tracking, compliance monitoring, and data visualization. Provides AI-powered recommendations, an interactive chatbot, and real-time dashboards for energy, waste, and emission metrics.",
     tech: ["React.js", "Node.js", "WebSockets", "REST APIs"],
     github: PROJECT_NATURECERT_URL,
     glow: "#10b981",
   },
   {
-    title: "Land Promoters Website",
-    desc: "A responsive real estate single-page application built to seamlessly manage customer inquiries. Implements an automated Nodemailer SMTP email routing engine with secure server-side validation to prevent spam and ensure data integrity.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Nodemailer"],
-    github: PROJECT_LAND_PROMOTERS_URL,
-    glow: "#f5b78b",
+    title: "HELIX Mail - AI-Powered Gmail Workspace",
+    desc: "An AI-powered Gmail workspace with real Gmail integration, assistant-controlled mailbox navigation, contextual replies, thread summaries, translation, structured compose actions, and real-time synchronization.",
+    tech: ["Next.js", "React", "Gmail API", "MongoDB", "Gemini / OpenAI"],
+    github: PROJECT_HELIX_MAIL_URL,
+    demo: PROJECT_HELIX_MAIL_DEMO_URL,
+    glow: "#7c3aed",
   },
 ];
 
@@ -105,10 +116,11 @@ const SKILLS = {
   "Programming Languages": ["JavaScript", "Python", "Java", "SQL"],
   Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS"],
   Backend: ["Node.js", "Express.js", "FastAPI", "REST APIs"],
-  Databases: ["PostgreSQL", "MongoDB"],
-  Testing: ["Jest", "Playwright", "Postman"],
-  Tools: ["Git", "GitHub", "VS Code"],
-  "AI / ML": ["YOLOv5", "OpenCV"],
+  Databases: ["MongoDB", "PostgreSQL", "MySQL"],
+  Testing: ["Jest", "Playwright"],
+  "AI / ML": ["YOLOv5", "OpenCV", "NLP"],
+  Tools: ["Git", "GitHub", "Docker", "Postman", "VS Code"],
+  Deployment: ["Vercel", "Railway", "Render"],
 };
 
 const SKILL_LOGO_FALLBACK = {
@@ -116,6 +128,12 @@ const SKILL_LOGO_FALLBACK = {
   Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
   Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  MySQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  "Data Structures & Algorithms": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  "Object-Oriented Programming": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  DBMS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  "Operating Systems": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+  "Computer Networks": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg",
   "React.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   HTML5: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
   CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
@@ -128,12 +146,17 @@ const SKILL_LOGO_FALLBACK = {
   PostgreSQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
   YOLOv5: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   OpenCV: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
+  NLP: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   Playwright: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-plain.svg",
   Jest: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
   Postman: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
   Git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
   GitHub: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
   "VS Code": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+  Docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  Vercel: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+  Railway: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/railway/railway-original.svg",
+  Render: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/render/render-original.svg",
 };
 
 function Reveal({ children, delay = 0 }) {
@@ -797,6 +820,25 @@ export default function ModernPortfolio() {
           min-height: 340px; /* Ensured no card crushes the content layout */
         }
 
+        .project-glass-panel.has-project-badge {
+          padding-top: 76px;
+        }
+
+        .project-badge {
+          position: absolute;
+          top: 14px;
+          left: 16px;
+          padding: 4px 9px;
+          border: 1px solid rgba(6, 95, 70, 0.16);
+          border-radius: 999px;
+          background: rgba(236, 253, 245, 0.94);
+          color: #065f46;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.2px;
+          text-transform: uppercase;
+        }
+
         .scroll-window { -webkit-overflow-scrolling: touch; }
 
         .carousel-dots { display: none; gap: 8px; justify-content: center; margin-top: 12px; }
@@ -835,6 +877,12 @@ export default function ModernPortfolio() {
           font-weight: 700;
         }
 
+        .project-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 18px;
+        }
+
         .project-action-foot {
           color: #065f46;
           font-size: 14px;
@@ -842,6 +890,11 @@ export default function ModernPortfolio() {
           display: flex;
           align-items: center;
           gap: 6px;
+          text-decoration: none;
+        }
+
+        .project-action-foot:hover {
+          color: #047857;
         }
 
         .ctrl-btn {
@@ -1071,6 +1124,7 @@ export default function ModernPortfolio() {
           /* ctrl-btn remains visible on mobile */
           .contact-card-box { padding: 40px 20px; }
           .project-glass-panel { min-width: 280px; max-width: 320px; padding: 20px; }
+          .project-glass-panel.has-project-badge { padding-top: 68px; }
           .project-track { gap: 16px; }
         }
       `}</style>
@@ -1140,7 +1194,7 @@ export default function ModernPortfolio() {
           </Reveal>
           <Reveal delay={300}>
             <p className="desc">
-              Full-Stack Developer passionate about building scalable web applications, real-time systems, and AI-powered solutions. Experienced in developing modern production-ready platforms using React.js, FastAPI, Node.js, MongoDB, and Python through impactful industry internships and hands-on projects.
+              Integrated M.Tech Computer Science and Engineering student graduating in 2027, with strong foundations in Data Structures and Algorithms, Object-Oriented Programming, and Software Engineering. I build reliable applications with Java, Python, React.js, FastAPI, Node.js, and MongoDB, specializing in RESTful APIs, real-time systems, authentication, and automated testing.
 
             </p>
           </Reveal>
@@ -1243,8 +1297,9 @@ export default function ModernPortfolio() {
           <div className="scroll-window" ref={projectRef}>
             <div className="project-track">
               {PROJECTS.map((proj, idx) => (
-                <a key={idx} href={proj.github} target="_blank" rel="noreferrer" className="glass-card project-glass-panel">
+                <div key={idx} className={`glass-card project-glass-panel${proj.badge ? " has-project-badge" : ""}`}>
                   <div className="glow-overlay" style={{ background: proj.glow }} />
+                  {proj.badge && <span className="project-badge">{proj.badge}</span>}
                   <div>
                     <h3>{proj.title}</h3>
                     <p>{proj.desc}</p>
@@ -1255,11 +1310,18 @@ export default function ModernPortfolio() {
                         <span key={t} className="tag-pill">{t}</span>
                       ))}
                     </div>
-                    <div className="project-action-foot">
-                      View Repository →
+                    <div className="project-actions">
+                      <a className="project-action-foot" href={proj.github} target="_blank" rel="noreferrer">
+                        View Repository <ExternalLink size={14} />
+                      </a>
+                      {proj.demo && (
+                        <a className="project-action-foot" href={proj.demo} target="_blank" rel="noreferrer">
+                          Live Demo <ExternalLink size={14} />
+                        </a>
+                      )}
                     </div>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
@@ -1315,7 +1377,7 @@ export default function ModernPortfolio() {
             <div className="glass-card contact-card-box">
               <h3>Let’s Connect</h3>
               <p>
-                Passionate about building modern web applications and solving real-world problems through clean, scalable software solutions.
+                I am open to opportunities where I can build practical software, learn from experienced teams, and contribute across frontend development, backend engineering, real-time systems, and applied AI.
               </p>
               <div className="contact-links-grid">
                 <a className="contact-anchor" href={`mailto:${EMAIL_ADDRESS}`}>
