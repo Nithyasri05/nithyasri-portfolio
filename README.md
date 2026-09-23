@@ -14,9 +14,6 @@
 <p align="center">
   Building modern web experiences with React, Node.js, FastAPI, and AI-powered solutions.
 </p>
-
-A clean, modern portfolio website showcasing my work, skills, education, and project experience in a polished dark-themed layout.
-
 ---
 
 ## About Me
